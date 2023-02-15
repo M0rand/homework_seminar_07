@@ -48,7 +48,7 @@ void SearchNumber(int[,] matrix)
             {
                 System.Console.WriteLine($"Число {number} находится по индексам {i} {j}");
                 found = true;
-                break;
+                return;
             }
         }
     }
@@ -58,7 +58,7 @@ void SearchNumber(int[,] matrix)
     }
 }
 
-int[,] matrix = FillMatrix(3, 3);
+int[,] matrix = FillMatrix(5, 5);
 PrintMatrix(matrix);
 SearchNumber(matrix);
 
