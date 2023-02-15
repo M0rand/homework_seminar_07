@@ -37,28 +37,31 @@ void PrintMatrix(int[,] matr)
 
 void SearchNumber(int[,] matrix)
 {
-    int number = 0;
+    System.Console.Write("Введите искомое число: ");
+    int number = Convert.ToInt32(Console.ReadLine());
+    bool found = false;
     for (int i = 0; i < matrix.GetLength(0); i++)
     {
         for (int j = 0; j < matrix.GetLength(1); j++)
         {
             if (matrix[i, j] == number)
             {
-                System.Console.WriteLine($"{i}, {j}");
-            }
-            if (matrix[i, j] != number)
-            {
-                System.Console.WriteLine("Такого числа нет");
+                System.Console.WriteLine($"Число {number} находится по индексам {i} {j}");
+                found = true;
+                break;
             }
         }
+    }
+    if (!found)
+    {
+        System.Console.WriteLine("Такого числа нет!");
     }
 }
 
 int[,] matrix = FillMatrix(3, 3);
 PrintMatrix(matrix);
-System.Console.Write("Введите число: ");
-int number = Convert.ToInt32(Console.ReadLine());
 SearchNumber(matrix);
+
 
 
 
